@@ -67,7 +67,7 @@ uv run python scripts/package_skill.py --install ~/.codex/skills
 
 ## 开发和发布
 
-见 [CONTRIBUTING.md](CONTRIBUTING.md) 与 [发布检查](docs/RELEASING.md)。CI 配置覆盖 Windows、Linux、macOS，但本地只实际执行了 Windows 检查；远端 CI 需推送仓库后运行。
+见 [CONTRIBUTING.md](CONTRIBUTING.md) 与 [发布检查](docs/RELEASING.md)。CI 覆盖 Windows、Linux、macOS；最新远端结果见 [GitHub Actions](https://github.com/jiangkuo888/LearnFromVideo/actions/workflows/ci.yml)。本地验证环境为 Windows。
 
 当前适合公开源码预览版（alpha）。[发布就绪报告](docs/PUBLICATION_READINESS.md) 区分本地已验证项与选定托管仓库后才能完成的设置。
 

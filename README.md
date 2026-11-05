@@ -65,7 +65,7 @@ Retrieval is currently lexical within one run. Reasoning is provided by the call
 
 ## Development and publication
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [security](SECURITY.md), and [releasing](docs/RELEASING.md). CI is configured for Windows/Linux/macOS; only Windows has been executed locally so far. Remote CI results require a hosted repository run.
+See [CONTRIBUTING.md](CONTRIBUTING.md), [security](SECURITY.md), and [releasing](docs/RELEASING.md). CI covers Windows/Linux/macOS; current remote results are available in [GitHub Actions](https://github.com/jiangkuo888/LearnFromVideo/actions/workflows/ci.yml). Local validation was performed on Windows.
 
 This is an alpha public source preview. [Publication readiness](docs/PUBLICATION_READINESS.md)
 records completed local checks and the hosting configuration still required.

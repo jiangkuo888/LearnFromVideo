@@ -35,8 +35,16 @@ file bytes with different modification times, not every compression runtime.
 ## Required on the selected hosting service
 
 The public repository is [jiangkuo888/LearnFromVideo](https://github.com/jiangkuo888/LearnFromVideo).
-Project URLs and private vulnerability reporting are configured. Initial remote
-CI and branch-protection results will be recorded after the first source push.
+Project URLs, private vulnerability reporting, dependency alerts and automatic
+security updates are configured. The main branch requires the six matrix checks,
+one PR approval and resolved conversations; force-push and deletion are disabled.
+Administrators retain bypass capability for repository recovery.
+
+[Initial CI](https://github.com/jiangkuo888/LearnFromVideo/actions/runs/42057344968)
+passed on Linux and Windows with Python 3.11 and 3.13. At publication, both macOS
+jobs were queued awaiting a GitHub runner, so macOS is not yet claimed validated.
+See [current runs](https://github.com/jiangkuo888/LearnFromVideo/actions/workflows/ci.yml)
+for subsequent results.
 Before announcing a tested release:
 
 1. Select the repository owner/name and add real source, issue and documentation
