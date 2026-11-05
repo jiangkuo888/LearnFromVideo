@@ -10,6 +10,7 @@
 - Added archive content/integrity scans, local-link checks, installation smoke tests,
   community templates, immutable CI action pins and weekly dependency update config.
 - Prepared public source preview documentation while retaining the inherited license.
+- Provision native FFmpeg on macOS ARM CI instead of the x64-only setup action.
 
 ## 0.2.0 — 2026-11-05
 

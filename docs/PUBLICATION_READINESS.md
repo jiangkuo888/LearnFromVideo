@@ -41,8 +41,9 @@ one PR approval and resolved conversations; force-push and deletion are disabled
 Administrators retain bypass capability for repository recovery.
 
 [Initial CI](https://github.com/jiangkuo888/LearnFromVideo/actions/runs/42057344968)
-passed on Linux and Windows with Python 3.11 and 3.13. At publication, both macOS
-jobs were queued awaiting a GitHub runner, so macOS is not yet claimed validated.
+passed on Linux and Windows with Python 3.11 and 3.13. The first macOS execution
+then exposed an x64-only FFmpeg installer on an ARM runner. CI now uses native
+FFmpeg provisioning on macOS while retaining both Python versions.
 See [current runs](https://github.com/jiangkuo888/LearnFromVideo/actions/workflows/ci.yml)
 for subsequent results.
 Before announcing a tested release:

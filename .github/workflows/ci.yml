@@ -23,6 +23,17 @@ jobs:
           version: '0.12.0'
           python-version: ${{ matrix.python }}
       - uses: FedericoCarboni/setup-ffmpeg@36c6454b5a2348e7794ba2d82a21506605921e3d # v3
+        if: runner.os != 'macOS'
+      - name: Ensure native FFmpeg on macOS
+        if: runner.os == 'macOS'
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: '1'
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            brew install ffmpeg
+          fi
+          ffmpeg -version
+          ffprobe -version
       - run: uv sync --locked
       - run: uv run ruff check src tests scripts skills/learn-from-video/scripts/lfv.py
       - run: uv run ruff format --check src tests scripts skills/learn-from-video/scripts/lfv.py
