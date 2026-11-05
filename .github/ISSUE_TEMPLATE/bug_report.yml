@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a reproducible CLI, skill or packaging problem.
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach cookies, signed playback URLs, raw transcripts, private media or browser profiles. Redact personal file paths from diagnostics.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, lfv --version, Python/uv/FFmpeg versions and installation method.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and minimal input
+      description: Provide a command and a synthetic/local reproduction where possible. Public source links may change independently of this tool.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+      description: Include a redacted error message, the pipeline stage and whether acquisition, ASR or learning validation failed.
+    validations:
+      required: true

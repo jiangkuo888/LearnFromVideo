@@ -1,0 +1,41 @@
+name: CI
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.11', '3.13']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@d0d8abe699bfb85fec6de9f7adb5ae17292296ff # v6
+        with:
+          version: '0.12.0'
+          python-version: ${{ matrix.python }}
+      - uses: FedericoCarboni/setup-ffmpeg@36c6454b5a2348e7794ba2d82a21506605921e3d # v3
+      - run: uv sync --locked
+      - run: uv run ruff check src tests scripts skills/learn-from-video/scripts/lfv.py
+      - run: uv run ruff format --check src tests scripts skills/learn-from-video/scripts/lfv.py
+      - run: uv run python -m unittest discover -s tests -v
+      - run: uv build
+      - run: uv run python scripts/package_skill.py
+      - run: uv run python scripts/check_release.py
+      - run: uv run python scripts/check_repository.py
+      - run: uv run python scripts/smoke_release.py
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: distributions-${{ matrix.os }}-${{ matrix.python }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

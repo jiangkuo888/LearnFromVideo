@@ -1,0 +1,4 @@
+interface:
+  display_name: "LearnFromVideo"
+  short_description: "学习视频、回看证据并提炼可验证的知识与操作步骤"
+  default_prompt: "使用 $learn-from-video 学习这个视频，核对字幕与画面，保存带时间戳的笔记并验证可复用步骤。"

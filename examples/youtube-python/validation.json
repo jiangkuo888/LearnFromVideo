@@ -1,0 +1,32 @@
+{
+  "report_schema": "learnfromvideo.validation-report@1",
+  "recorded_at": "2026-11-05T14:16:01.979633+00:00",
+  "source": "https://www.youtube.com/watch?v=x7X9w_GIm1s",
+  "title": "Python in 100 Seconds",
+  "duration_seconds": 143.341,
+  "sha256": "6ab457b94afce4244f9c72f252b97fb1d074f8e820754199a6e81c20f5f36f87",
+  "acquisition": "yt-dlp",
+  "subtitle_streams": 0,
+  "available_subtitle_language_count": 0,
+  "available_auto_caption_language_count": 157,
+  "transcript_origin": "platform-or-supplied-subtitles",
+  "transcript_segments": 72,
+  "overview_frames": 15,
+  "revisit_frames": 7,
+  "validation": {
+    "schema": "learnfromvideo.validation@1",
+    "passed": true,
+    "claims": 4,
+    "reviewed_frames": 22,
+    "practice": "passed",
+    "scope": "Structural evidence references only; truth and mastery require agent review."
+  },
+  "versions": {
+    "learnfromvideo": "0.2.0",
+    "yt-dlp": "2026.10.26",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.5"
+  },
+  "ffmpeg": "ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers",
+  "scope": "Agent-reviewed captions/ASR and sampled visual evidence; no word-error-rate measurement."
+}

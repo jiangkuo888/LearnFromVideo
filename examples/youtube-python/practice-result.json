@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": {
+    "function_loop_indentation": true,
+    "lambda_map": true,
+    "container_literals": true,
+    "dynamic_binding": true,
+    "no_implicit_string_integer_addition": true
+  }
+}

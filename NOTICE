@@ -1,0 +1,13 @@
+LearnFromVideo
+
+This project contains code and workflow adaptations from Hypit.
+Upstream: https://github.com/hypit-ai/hypit
+Copyright © 2026 Hypit.AI
+
+The original Hypit license, including additional conditions, is retained in LICENSE.
+This is source-available software under those terms, not unmodified Apache-2.0
+and not an OSI-approved open-source license. See docs/LICENSING.md.
+
+yt-dlp, Pillow, requests and optional faster-whisper are separate dependencies
+with their own licenses. FFmpeg and Node.js are external tools. Downloaded media
+and model weights are not relicensed by this project and are not bundled.

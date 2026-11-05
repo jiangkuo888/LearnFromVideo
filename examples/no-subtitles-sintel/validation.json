@@ -1,0 +1,32 @@
+{
+  "report_schema": "learnfromvideo.validation-report@1",
+  "recorded_at": "2026-11-05T14:16:12.138137+00:00",
+  "source": "https://media.w3.org/2010/05/sintel/trailer.mp4",
+  "title": "trailer",
+  "duration_seconds": 52.208333,
+  "sha256": "b670602fa00934ca27c4351bb0efe7ea7a07fae57284e44226025eeed7c51254",
+  "acquisition": "yt-dlp",
+  "subtitle_streams": 0,
+  "available_subtitle_language_count": 0,
+  "available_auto_caption_language_count": 0,
+  "transcript_origin": "faster-whisper:small",
+  "transcript_segments": 2,
+  "overview_frames": 11,
+  "revisit_frames": 4,
+  "validation": {
+    "schema": "learnfromvideo.validation@1",
+    "passed": true,
+    "claims": 3,
+    "reviewed_frames": 15,
+    "practice": "not-run",
+    "scope": "Structural evidence references only; truth and mastery require agent review."
+  },
+  "versions": {
+    "learnfromvideo": "0.2.0",
+    "yt-dlp": "2026.10.26",
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.5"
+  },
+  "ffmpeg": "ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers",
+  "scope": "Agent-reviewed captions/ASR and sampled visual evidence; no word-error-rate measurement."
+}

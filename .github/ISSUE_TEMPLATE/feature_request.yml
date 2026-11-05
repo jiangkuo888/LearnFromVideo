@@ -1,0 +1,17 @@
+name: Feature request
+description: Propose a concrete video-learning workflow improvement.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Task and current limitation
+      description: What are you trying to learn or verify, and what currently prevents it?
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Proposed behavior and verification
+      description: Describe the expected output and how to tell the improvement works.
+    validations:
+      required: true
