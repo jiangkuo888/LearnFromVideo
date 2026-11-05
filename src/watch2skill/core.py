@@ -1,4 +1,4 @@
-"""LearnFromVideo core; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
+"""Watch2Skill core; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
 
 import json
 import re

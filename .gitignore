@@ -8,7 +8,7 @@ logs/
 .ruff_cache/
 .pytest_cache/
 build/
-skills/learn-from-video/scripts/runtime/
+skills/watch2skill/scripts/runtime/
 *.part
 *.wav
 *.mp4

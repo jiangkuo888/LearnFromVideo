@@ -7,12 +7,12 @@ import unittest
 from pathlib import Path
 
 from scripts.check_release import check, inspect_archive, scan_text
-from scripts.package_skill import build, install, write_archive
+from scripts.package_skill import build, install, migrate_legacy, write_archive
 
 
 class ReleaseTests(unittest.TestCase):
     def setUp(self):
-        self.temporary = tempfile.TemporaryDirectory(prefix="lfv-release-test-")
+        self.temporary = tempfile.TemporaryDirectory(prefix="watch2skill-release-test-")
         self.root = Path(self.temporary.name)
         self.repository = Path(__file__).resolve().parents[1]
 
@@ -52,7 +52,7 @@ class ReleaseTests(unittest.TestCase):
             hashlib.sha256(first.read_bytes()).digest(),
             hashlib.sha256(second.read_bytes()).digest(),
         )
-        artifact = self.root / "learn-from-video.zip"
+        artifact = self.root / "watch2skill.zip"
         write_archive(skill, artifact)
         inspect_archive(artifact, self.repository)
         (skill / "SKILL.md").write_text("changed after manifest", encoding="utf-8")
@@ -73,9 +73,34 @@ class ReleaseTests(unittest.TestCase):
 
     def test_update_refuses_unrelated_directory(self):
         skill = build(self.repository, self.root / "stage")
-        destination = self.root / "installed/learn-from-video"
+        destination = self.root / "installed/watch2skill"
         destination.mkdir(parents=True)
         (destination / "user.txt").write_text("keep", encoding="utf-8")
         with self.assertRaises(ValueError):
             install(skill, self.root / "installed", update=True)
         self.assertEqual((destination / "user.txt").read_text(encoding="utf-8"), "keep")
+
+    def test_legacy_skill_is_archived_after_new_install(self):
+        skill = build(self.repository, self.root / "stage")
+        directory = self.root / "installed"
+        install(skill, directory)
+        legacy = directory / "learn-from-video"
+        (legacy / "scripts/runtime").mkdir(parents=True)
+        (legacy / "SKILL.md").write_text("---\nname: learn-from-video\n---\n", encoding="utf-8")
+        (legacy / "scripts/runtime/pyproject.toml").write_text(
+            '[project]\nname = "learnfromvideo"\n', encoding="utf-8"
+        )
+        backup = migrate_legacy(directory)
+        self.assertTrue((backup / "SKILL.md").is_file())
+        self.assertFalse(legacy.exists())
+        self.assertTrue((directory / "watch2skill/SKILL.md").is_file())
+        self.assertIsNone(migrate_legacy(directory))
+
+    def test_legacy_migration_refuses_unknown_files(self):
+        directory = self.root / "installed"
+        (directory / "learn-from-video").mkdir(parents=True)
+        marker = directory / "learn-from-video/user.txt"
+        marker.write_text("keep", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            migrate_legacy(directory)
+        self.assertEqual(marker.read_text(encoding="utf-8"), "keep")

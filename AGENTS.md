@@ -1,8 +1,8 @@
-# LearnFromVideo
+# Watch2Skill
 
 This is a standalone local video-learning tool, adapted from Hypit. Do not modify an upstream checkout as part of normal development here.
 
-- Use `uv sync --python 3.11` and `uv run lfv`. Dependencies are pinned in uv.lock.
+- Use `uv sync --python 3.11` and `uv run watch2skill`. Dependencies are pinned in uv.lock.
 - Run `uv run python -m unittest discover -s tests -v` after functional changes.
 - Run Ruff and the offline generated-media integration test before a release; see CONTRIBUTING.md.
 - Source is published under the existing Hypit additional-conditions license. Do not call it MIT, standard Apache-2.0, or OSI-approved open source.

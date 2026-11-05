@@ -1,6 +1,6 @@
-# Public source preview readiness — 0.2.1
+# Public source preview readiness — 0.3.0
 
-Assessment date: 2026-11-05. Recommended tier: **alpha public source preview**.
+Assessment date: 2026-11-06. Recommended tier: **alpha public source preview**.
 This covers the local checkout and artifacts, not a hosted repository, legal
 certification, universal platform availability or a production SLA.
 
@@ -17,10 +17,10 @@ existing adaptations.
 | Area | Evidence |
 |---|---|
 | Real inputs | Bilibili, YouTube captions and independent no-subtitle ASR with scoped [reports](../examples/README.md) |
-| Behavior | 16 tests: generated-media integration, stale-validation removal, unsafe archive paths, tampering, stable ZIP bytes and safe skill updates |
+| Behavior | 18 tests: generated-media integration, stale-validation removal, unsafe archive paths, tampering, stable ZIP bytes and safe skill updates |
 | Code | Ruff lint/format; separate acquisition, transcripts, media, pipeline, learning and CLI modules |
 | Metadata | Wheel and source distribution build; Twine metadata checks pass |
-| Installation | Wheel and skill ZIP run in fresh directories outside the source checkout, reporting 0.2.1 |
+| Installation | Wheel and skill ZIP run in fresh directories outside the source checkout, reporting 0.3.0 |
 | Artifact contents | Scans reject private media, concrete credential markers, personal paths, unsafe archive paths and altered attribution |
 | Integrity | Per-file skill manifest; SHA256SUMS and release-manifest.json |
 | Repository | Public content, local Markdown links and immutable Action references checked |
@@ -34,17 +34,17 @@ file bytes with different modification times, not every compression runtime.
 
 ## Required on the selected hosting service
 
-The public repository is [jiangkuo888/LearnFromVideo](https://github.com/jiangkuo888/LearnFromVideo).
+The public repository is [jiangkuo888/Watch2Skill](https://github.com/jiangkuo888/Watch2Skill).
 Project URLs, private vulnerability reporting, dependency alerts and automatic
 security updates are configured. The main branch requires the six matrix checks,
 one PR approval and resolved conversations; force-push and deletion are disabled.
 Administrators retain bypass capability for repository recovery.
 
-[Initial CI](https://github.com/jiangkuo888/LearnFromVideo/actions/runs/42057344968)
+[Initial CI](https://github.com/jiangkuo888/Watch2Skill/actions/runs/42057344968)
 passed on Linux and Windows with Python 3.11 and 3.13. The first macOS execution
 then exposed an x64-only FFmpeg installer on an ARM runner. CI now uses native
 FFmpeg provisioning on macOS while retaining both Python versions.
-See [current runs](https://github.com/jiangkuo888/LearnFromVideo/actions/workflows/ci.yml)
+See [current runs](https://github.com/jiangkuo888/Watch2Skill/actions/workflows/ci.yml)
 for subsequent results.
 Before announcing a tested release:
 
@@ -60,3 +60,5 @@ Before announcing a tested release:
 
 Commands and rollback guidance: [releasing](RELEASING.md), [recovery](QUICKSTART.md).
 No package-index upload or GitHub release has been created by this preparation.
+
+Version 0.3.0 renames the public surfaces; historical @1 evidence schemas and original example reports retain their earlier identities. See [migration](MIGRATION.md).

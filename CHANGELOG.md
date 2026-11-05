@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-11-06
+
+- Rename the project, repository, Python distribution/module, primary CLI and
+  skill to Watch2Skill.
+- Keep the legacy lfv console alias and @1 evidence schema identifiers compatible.
+- Add verified legacy skill migration with retained backups; preserve historical
+  validation records and the inherited license. See docs/MIGRATION.md.
+
 ## 0.2.1 — 2026-11-05
 
 - Added version diagnostics and invalidate stale success reports on failed rechecks.
@@ -26,4 +34,4 @@
 
 ## 0.1.0 — 2026-11-05
 
-- Initial Hypit-derived local CLI, Bilibili browser-export validation and LearnFromVideo skill.
+- Initial Hypit-derived local CLI, Bilibili browser-export validation and Watch2Skill skill.

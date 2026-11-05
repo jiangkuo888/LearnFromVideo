@@ -1,4 +1,4 @@
-"""LearnFromVideo cli; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
+"""Watch2Skill cli; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
 
 import argparse
 import json
@@ -17,9 +17,9 @@ from .transcripts import parse_subtitles, transcribe, write_transcript
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="lfv", description="LearnFromVideo evidence tools for AI agents"
+        prog="watch2skill", description="Watch2Skill evidence tools for AI agents"
     )
-    parser.add_argument("--version", action="version", version=f"LearnFromVideo {__version__}")
+    parser.add_argument("--version", action="version", version=f"Watch2Skill {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("prepare")
     p.add_argument("source")
@@ -64,7 +64,7 @@ def main():
             print(
                 json.dumps(
                     {
-                        "learnfromvideo": __version__,
+                        "watch2skill": __version__,
                         "python": sys.version.split()[0],
                         "yt_dlp": yt_dlp.version.__version__,
                         "ffmpeg": shutil.which("ffmpeg"),
@@ -163,7 +163,7 @@ def main():
                 save(folder / "manifest.json", m)
                 print(folder / "transcript.json")
     except Exception as e:
-        print("LearnFromVideo: " + re.sub(r"https?://\S+", "[URL]", str(e)), file=sys.stderr)
+        print("Watch2Skill: " + re.sub(r"https?://\S+", "[URL]", str(e)), file=sys.stderr)
         sys.exit(1)
 
 

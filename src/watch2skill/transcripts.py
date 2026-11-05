@@ -1,4 +1,4 @@
-"""LearnFromVideo transcripts; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
+"""Watch2Skill transcripts; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
 
 import html
 import json

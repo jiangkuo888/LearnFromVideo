@@ -8,7 +8,7 @@ body:
     id: environment
     attributes:
       label: Environment
-      description: Operating system, lfv --version, Python/uv/FFmpeg versions and installation method.
+      description: Operating system, watch2skill --version, Python/uv/FFmpeg versions and installation method.
     validations:
       required: true
   - type: textarea

@@ -1,4 +1,4 @@
-"""LearnFromVideo learning; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
+"""Watch2Skill learning; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
 
 import hashlib
 import math

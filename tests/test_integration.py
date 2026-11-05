@@ -12,7 +12,7 @@ from pathlib import Path
 @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "FFmpeg required")
 class LocalPipelineTests(unittest.TestCase):
     def test_generated_media_to_validated_learning(self):
-        with tempfile.TemporaryDirectory(prefix="lfv-e2e-") as temporary:
+        with tempfile.TemporaryDirectory(prefix="watch2skill-e2e-") as temporary:
             root = Path(temporary)
             media = root / "fixture.mp4"
             subprocess.run(
@@ -52,7 +52,7 @@ class LocalPipelineTests(unittest.TestCase):
 
             def cli(*arguments):
                 result = subprocess.run(
-                    [sys.executable, "-m", "learnfromvideo", *map(str, arguments)],
+                    [sys.executable, "-m", "watch2skill", *map(str, arguments)],
                     capture_output=True,
                     text=True,
                     encoding="utf-8",

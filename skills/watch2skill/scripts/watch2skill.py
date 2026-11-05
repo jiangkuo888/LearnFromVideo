@@ -7,7 +7,7 @@ from pathlib import Path
 
 uv = shutil.which("uv")
 if not uv:
-    raise SystemExit("LearnFromVideo requires uv on PATH")
+    raise SystemExit("Watch2Skill requires uv on PATH")
 runtime = Path(__file__).resolve().parent / "runtime"
 if not (runtime / "pyproject.toml").exists():
     runtime = Path(__file__).resolve().parents[3]
@@ -34,7 +34,7 @@ raise SystemExit(
             *extras,
             "python",
             "-m",
-            "learnfromvideo",
+            "watch2skill",
             *arguments,
         ]
     )

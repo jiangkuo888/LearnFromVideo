@@ -9,7 +9,7 @@ Signed URLs may grant temporary access; avoid placing them in issues or logs.
 Do not attach raw player API responses or browser profiles to bug reports.
 
 Report suspected vulnerabilities through the repository's enabled
-[private vulnerability reporting](https://github.com/jiangkuo888/LearnFromVideo/security/advisories/new).
+[private vulnerability reporting](https://github.com/jiangkuo888/Watch2Skill/security/advisories/new).
 Do not disclose vulnerability details in public issues. Include affected versions,
 minimal reproduction steps and impact, with credentials and private media removed.
 The project is maintained on a best-effort basis; no response-time SLA is promised.

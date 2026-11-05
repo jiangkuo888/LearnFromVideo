@@ -1,6 +1,6 @@
 [project]
-name = "learnfromvideo"
-version = "0.2.1"
+name = "watch2skill"
+version = "0.3.0"
 requires-python = ">=3.11,<3.15"
 readme = "README.md"
 license = "LicenseRef-Hypit-Additional-Conditions"
@@ -18,13 +18,14 @@ dependencies = ["yt-dlp[default,curl-cffi]>=2026.3.17", "Pillow>=11", "requests>
 asr = ["faster-whisper>=1.2"]
 
 [project.scripts]
-lfv = "learnfromvideo.cli:main"
+watch2skill = "watch2skill.cli:main"
+lfv = "watch2skill.cli:main"
 
 [project.urls]
-Repository = "https://github.com/jiangkuo888/LearnFromVideo"
-Issues = "https://github.com/jiangkuo888/LearnFromVideo/issues"
-Documentation = "https://github.com/jiangkuo888/LearnFromVideo/blob/main/docs/QUICKSTART.md"
-Changelog = "https://github.com/jiangkuo888/LearnFromVideo/blob/main/CHANGELOG.md"
+Repository = "https://github.com/jiangkuo888/Watch2Skill"
+Issues = "https://github.com/jiangkuo888/Watch2Skill/issues"
+Documentation = "https://github.com/jiangkuo888/Watch2Skill/blob/main/docs/QUICKSTART.md"
+Changelog = "https://github.com/jiangkuo888/Watch2Skill/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]

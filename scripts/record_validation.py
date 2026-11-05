@@ -5,7 +5,7 @@ import importlib.metadata
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from learnfromvideo.core import read, run, save
+from watch2skill.core import read, run, save
 
 
 def main():
@@ -44,7 +44,7 @@ def main():
         "ffmpeg": run(["ffmpeg", "-version"], timeout=20).splitlines()[0],
         "scope": "Agent-reviewed captions/ASR and sampled visual evidence; no word-error-rate measurement.",
     }
-    for name in ("learnfromvideo", "yt-dlp", "faster-whisper", "ctranslate2"):
+    for name in ("watch2skill", "yt-dlp", "faster-whisper", "ctranslate2"):
         try:
             report["versions"][name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:

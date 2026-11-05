@@ -7,8 +7,8 @@ Evaluate the function in [browser-export.js](browser-export.js) on that page wit
 Split and sanitize the export with:
 
 ```powershell
-python "<skill>/scripts/lfv.py" import-browser "export.json" --out ".private/video-id"
-python "<skill>/scripts/lfv.py" prepare "https://www.bilibili.com/video/VIDEO_ID/" --out "runs/video-id" --browser-source ".private/video-id/browser-source.json" --subtitles ".private/video-id/subtitles.json"
+python "<skill>/scripts/watch2skill.py" import-browser "export.json" --out ".private/video-id"
+python "<skill>/scripts/watch2skill.py" prepare "https://www.bilibili.com/video/VIDEO_ID/" --out "runs/video-id" --browser-source ".private/video-id/browser-source.json" --subtitles ".private/video-id/subtitles.json"
 ```
 
 If the export has no subtitles, omit `--subtitles` and use the optional ASR path after acquisition. Canonical URL and export must identify the same video. Signed addresses can expire or be bound to a network location. Refresh only through normal page playback when needed; otherwise use an authorized local file or media saved in the browser's network environment.

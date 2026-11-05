@@ -1,6 +1,6 @@
 # Licensing and publication
 
-LearnFromVideo retains the Hypit license verbatim. The owner chose to publish
+Watch2Skill retains the Hypit license verbatim. The owner chose to publish
 source with these additional restrictions preserved. Do not describe this as MIT,
 standard Apache-2.0, or an OSI-approved open-source license.
 

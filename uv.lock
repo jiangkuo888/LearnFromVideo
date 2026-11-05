@@ -617,38 +617,6 @@ wheels = [
 ]
 
 [[package]]
-name = "learnfromvideo"
-version = "0.2.1"
-source = { editable = "." }
-dependencies = [
-    { name = "pillow" },
-    { name = "requests" },
-    { name = "yt-dlp", extra = ["curl-cffi", "default"] },
-]
-
-[package.optional-dependencies]
-asr = [
-    { name = "faster-whisper" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "ruff" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "faster-whisper", marker = "extra == 'asr'", specifier = ">=1.2" },
-    { name = "pillow", specifier = ">=11" },
-    { name = "requests", specifier = ">=2.32" },
-    { name = "yt-dlp", extras = ["default", "curl-cffi"], specifier = ">=2026.3.17" },
-]
-provides-extras = ["asr"]
-
-[package.metadata.requires-dev]
-dev = [{ name = "ruff", specifier = ">=0.17.3" }]
-
-[[package]]
 name = "mutagen"
 version = "1.48.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1140,6 +1108,38 @@ sdist = { url = "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909
 wheels = [
     { url = "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl", hash = "sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3", size = 135717, upload-time = "2026-09-15T19:29:34.577Z" },
 ]
+
+[[package]]
+name = "watch2skill"
+version = "0.3.0"
+source = { editable = "." }
+dependencies = [
+    { name = "pillow" },
+    { name = "requests" },
+    { name = "yt-dlp", extra = ["curl-cffi", "default"] },
+]
+
+[package.optional-dependencies]
+asr = [
+    { name = "faster-whisper" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ruff" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "faster-whisper", marker = "extra == 'asr'", specifier = ">=1.2" },
+    { name = "pillow", specifier = ">=11" },
+    { name = "requests", specifier = ">=2.32" },
+    { name = "yt-dlp", extras = ["default", "curl-cffi"], specifier = ">=2026.3.17" },
+]
+provides-extras = ["asr"]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ruff", specifier = ">=0.17.3" }]
 
 [[package]]
 name = "websockets"

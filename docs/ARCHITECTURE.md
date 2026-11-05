@@ -1,6 +1,6 @@
 # Architecture
 
-LearnFromVideo has two layers: deterministic local evidence tools and a skill that
+Watch2Skill has two layers: deterministic local evidence tools and a skill that
 guides a multimodal agent. The CLI does not call a reasoning-model API or silently
 turn extraction into learned knowledge.
 

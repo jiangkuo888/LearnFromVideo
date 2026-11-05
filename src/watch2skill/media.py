@@ -1,4 +1,4 @@
-"""LearnFromVideo media; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
+"""Watch2Skill media; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
 
 import json
 import math

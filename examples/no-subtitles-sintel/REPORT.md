@@ -5,10 +5,10 @@ Tool version: 0.2.0. Full portable metrics: [validation.json](validation.json).
 
 ```sh
 uv sync --locked --extra asr
-uv run --extra asr lfv prepare "https://media.w3.org/2010/05/sintel/trailer.mp4" --out runs/no-subtitles-sintel --language en --every 5 --asr --model small
-uv run --extra asr lfv frames runs/no-subtitles-sintel --at 11,13,15,30
+uv run --extra asr watch2skill prepare "https://media.w3.org/2010/05/sintel/trailer.mp4" --out runs/no-subtitles-sintel --language en --every 5 --asr --model small
+uv run --extra asr watch2skill frames runs/no-subtitles-sintel --at 11,13,15,30
 # Agent reads ASR and images, writes NOTES.md + learning.json.
-uv run --extra asr lfv validate runs/no-subtitles-sintel
+uv run --extra asr watch2skill validate runs/no-subtitles-sintel
 ```
 
 Absence checks: zero subtitle streams in ffprobe, no supplied subtitle file, zero

@@ -80,8 +80,8 @@ def inspect_archive(artifact, root):
         matches = [data for name, data in files.items() if name.endswith("/" + required)]
         if not matches or any(data != (root / required).read_bytes() for data in matches):
             raise ValueError(f"Missing or altered {required}: {artifact.name}")
-    if artifact.name == "learn-from-video.zip":
-        prefix = "learn-from-video/"
+    if artifact.name == "watch2skill.zip":
+        prefix = "watch2skill/"
         bundle = json.loads(files[prefix + "bundle.json"])
         actual = {
             name[len(prefix) :]: hashlib.sha256(data).hexdigest()
@@ -102,9 +102,9 @@ def main():
         "version"
     ]
     artifacts = [
-        args.dist / f"learnfromvideo-{version}-py3-none-any.whl",
-        args.dist / f"learnfromvideo-{version}.tar.gz",
-        args.dist / "learn-from-video.zip",
+        args.dist / f"watch2skill-{version}-py3-none-any.whl",
+        args.dist / f"watch2skill-{version}.tar.gz",
+        args.dist / "watch2skill.zip",
     ]
     checksums, reports = [], []
     for artifact in artifacts:

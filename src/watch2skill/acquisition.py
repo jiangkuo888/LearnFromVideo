@@ -1,4 +1,4 @@
-"""LearnFromVideo acquisition; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
+"""Watch2Skill acquisition; Hypit-derived workflow, see LICENSE and PROVENANCE.md."""
 
 import re
 import shutil

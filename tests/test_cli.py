@@ -5,10 +5,10 @@ import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-from learnfromvideo.acquisition import download_stream
-from learnfromvideo.core import save
-from learnfromvideo.learning import search, validate
-from learnfromvideo.transcripts import parse_subtitles, validate_segments
+from watch2skill.acquisition import download_stream
+from watch2skill.core import save
+from watch2skill.learning import search, validate
+from watch2skill.transcripts import parse_subtitles, validate_segments
 
 
 class EvidenceTests(unittest.TestCase):

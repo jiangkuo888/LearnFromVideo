@@ -37,20 +37,20 @@ def main():
     version = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))["project"][
         "version"
     ]
-    wheel = (args.dist / f"learnfromvideo-{version}-py3-none-any.whl").resolve()
-    bundle = (args.dist / "learn-from-video.zip").resolve()
-    with tempfile.TemporaryDirectory(prefix="lfv-install-smoke-") as temporary:
+    wheel = (args.dist / f"watch2skill-{version}-py3-none-any.whl").resolve()
+    bundle = (args.dist / "watch2skill.zip").resolve()
+    with tempfile.TemporaryDirectory(prefix="watch2skill-install-smoke-") as temporary:
         work = Path(temporary)
         environment = work / "wheel-env"
         execute([uv, "venv", "--python", sys.executable, str(environment)], work)
         python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
         execute([uv, "pip", "install", "--python", str(python), str(wheel)], work)
-        wheel_version = execute([str(python), "-I", "-m", "learnfromvideo", "--version"], work)
-        if wheel_version != f"LearnFromVideo {version}":
+        wheel_version = execute([str(python), "-I", "-m", "watch2skill", "--version"], work)
+        if wheel_version != f"Watch2Skill {version}":
             raise ValueError("Installed wheel version mismatch")
         with zipfile.ZipFile(bundle) as archive:
             archive.extractall(work / "skill")
-        launcher = work / "skill/learn-from-video/scripts/lfv.py"
+        launcher = work / "skill/watch2skill/scripts/watch2skill.py"
         skill_version = execute([sys.executable, str(launcher), "--version"], work)
         if skill_version != wheel_version:
             raise ValueError("Installed skill version mismatch")
